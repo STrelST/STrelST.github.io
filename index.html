@@ -1,68 +1,80 @@
 <!DOCTYPE html>
 <html>
 <head>
- <title>Анкета для списания долга</title>
+ <meta charset="UTF-8">
+ <meta name="viewport" content="width=device-width, initial-scale=1.0">
+ <title>Заполните анкету</title>
  <style>
   body {
-   background-color: #fff;
+   background-color: white;
+   margin: 0;
+   padding: 0;
    font-family: Arial, sans-serif;
-   font-size: 16px;
-   color: #000;
   }
   .container {
-   display: flex;
-   flex-direction: column;
-   align-items: center;
-   margin-top: 50px;
+   max-width: 1920px;
+   margin: 0 auto;
+   padding: 20px;
   }
   .image {
-   width: 80%;
-   height: auto;
-   border-radius: 10px;
+   position: absolute;
+   top: 172px;
+   left: 685px;
+   right: calc(100% - 1235px);
+   height: calc((100vw - 40px) * 9 / 16);
+   background-image: url('image.jpg');
+   background-size: cover;
+   border-radius: 20px;
   }
-  .title {
-   margin-top: 20px;
-   font-size: 24px;
+  h1 {
+   font-size: 36px;
    font-weight: bold;
+   text-align: center;
+   margin-top: 50px;
   }
-  .text {
-   margin-top: 10px;
-   font-size: 18px;
+  p {
+   font-size: 24px;
+   text-align: center;
+   margin-top: 20px;
   }
   .button {
-   margin-top: 20px;
+   display: inline-block;
    background-color: #ff69b4;
-   color: #fff;
-   padding: 10px 20px;
-   border-radius: 5px;
-   border: none;
+   color: white;
+   font-size: 24px;
+   font-weight: bold;
+   padding: 20px 40px;
+   border-radius: 10px;
+   margin-top: 50px;
+   position: relative;
    cursor: pointer;
-   animation: blink 5s infinite;
-   transition: background-color 0.3s ease-in-out;
   }
   .button:hover {
-   background-color: #e55a9b;
+   background-color: #ff5c9b;
   }
-  @keyframes blink {
-   0% {
-    opacity: 1;
-   }
-   50% {
-    opacity: 0.5;
-   }
-   100% {
-    opacity: 1;
-   }
+  .button::before {
+   content: "";
+   position: absolute;
+   top: 0;
+   left: 0;
+   width: 0%;
+   height: 100%;
+   background-color: white;
+   opacity: 0.5;
+   z-index: -1;
+   transition: width 1s linear;
+  }
+  .button:hover::before {
+   width: 100%;
   }
  </style>
 </head>
 <body>
  <div class="container">
-  <img class="image" src="https://via.placeholder.com/1280x720.png?text=Image" alt="Картинка">
-  <div style="height: 10px; width: 100%; background-color: #000;"></div>
-  <div class="title">Заполните анкету, чтобы получить план действий по списанию долга</div>
-  <div class="text">По официальным данным Правительства уже более 200 000 Россиян признали свои долги безнадежными через суд.</div>
-  <button class="button">Заполнить анкету</button>
+  <div class="image"></div>
+  <h1>Заполните анкету, чтобы получить план действий по списанию долга</h1>
+  <p>По официальным данным Правительства уже более 200 000 Россиян признали свои долги безнадежными через суд.</p>
+  <div class="button">Заполнить анкету</div>
  </div>
 </body>
 </html>
